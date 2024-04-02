@@ -9,8 +9,8 @@ POST http://127.0.0.1:8000/cliente/ HTTP/1.1
 content-type: application/json
 
 {
-  "nome" : "João da Silva",
-  "cpf" : "12345678901",
+  "nome" : "Bruno Vinicius Mello",
+  "cpf" : "12345678904",
   "telefone" : "49991234567"
 }
 
@@ -19,10 +19,10 @@ PUT http://127.0.0.1:8000/cliente/2 HTTP/1.1
 content-type: application/json
 
 {
-  "nome" : "Maria Oliveira",
-  "cpf" : "98765432109",
+  "nome" : "Bruno Mello",
+  "cpf" : "98765432234",
   "telefone" : "49998888777"
 }
 
 ### Verbo DELETE - excluir
-DELETE http://127.0.0.1:8000/cliente/3 HTTP/1.1
+DELETE http://127.0.0.1:8000/cliente/2 HTTP/1.1
