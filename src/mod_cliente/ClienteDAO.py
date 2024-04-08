@@ -1,9 +1,12 @@
 from fastapi import APIRouter
 from mod_cliente.Cliente import Cliente
 # import da persistência
+from typing import Annotated
+from fastapi import Depends
+from security import get_current_active_user, User
 import db
 from mod_cliente.ClienteModel import ClienteDB
-router = APIRouter()
+router = APIRouter( dependencies=[Depends(get_current_active_user)] )
 # Criar as rotas/endpoints: GET, POST, PUT, DELETE
 @router.get("/cliente/", tags=["Cliente"])
 def get_cliente():
@@ -19,7 +22,7 @@ def get_cliente():
   finally:
     session.close() 
 
-@router.get("/cliente/{id}", tags=["Clienteo"])
+@router.get("/cliente/{id}", tags=["Cliente"])
 def get_cliente(id: int):
   try:
       session = db.Session()

@@ -1,9 +1,12 @@
 from fastapi import APIRouter
 from mod_produto.Produto import Produto
 # import da persistência
+from typing import Annotated
+from fastapi import Depends
+from security import get_current_active_user, User
 import db
 from mod_produto.ProdutoModel import ProdutoDB
-router = APIRouter()
+router = APIRouter( dependencies=[Depends(get_current_active_user)] )
 # Criar as rotas/endpoints: GET, POST, PUT, DELETE
 @router.get("/produto/", tags=["Produto"])
 def get_produto():
