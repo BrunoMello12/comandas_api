@@ -1,13 +1,16 @@
+@token = eyJhbGciOiJIUzI1cwMTd9.UGVKOrjcoc4ZS5gQ42VKld11jXKMGX-ikYad4-vuT3w
+
 ### Verbo GET – listar todos
 GET http://localhost:8000/funcionario/ HTTP/1.1
 ### Verbo GET – listar um
 GET http://localhost:8000/funcionario/10 HTTP/1.1
 ### Verbo POST – adicionar
 POST http://127.0.0.1:8000/funcionario/ HTTP/1.1
+Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-"nome" : "Abc da Silva",
+"nome" : "Zé das batatas",
 "cpf" : "01923874656",
 "telefone" : "49988234567",
 "senha" : "bolinhas",
